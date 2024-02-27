@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}" class="h-100">
+{% include head.html %}
+
+<body>
+  <div class="container-fluidr">
+    <div class="row">
+      {% include top.html %}
+    </div>
+     
+      {% for post in site.posts %}
+      <!-- <div class="col">
+        <div class="p-3"><a href="{{ post.url | relative_url }}" class="fs-5 text-primary-emphasis">{{ post.title | escape }} </a><br><span class="fs-6">{{ post.date | date: "%Y年%m月%d日" }}</span></div>
+      </div> -->
+      <div class="row mt-1 p-0 m-0">
+        <!-- <h3>{{ post.date | date: "%Y-%m-%d" }} {{ post.title }}</h3>       -->
+        <!-- <hr class="mt-1 mb-1"> -->
+        <div class="">
+          {{ post.content }}
+        </div>
+      </div>
+
+      {% endfor %}
+    <div class="row">
+      {%- include footer.html -%}
+    </div>
+  </div>
+  </div>
+  {% include script.html %}
+</body>
+
+</html>
+
+
+<!-- layout: default -->
+<!-- <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  ---
+  ---
+    {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article> 
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}</p>
+  </header> -->
